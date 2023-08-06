@@ -1,0 +1,89 @@
+@import 'style-general.scss';
+.delivery {
+  background-image: url(../img/delivery-fon.png);
+
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+  height: 516px;
+
+}
+
+.delivery-content {
+  .block__title {
+    margin-bottom: 18px;
+      &-left h2{
+      text-align: left;
+    line-height: normal;
+    margin-bottom: 18px;
+    
+    }
+    }
+max-width: 730px;
+}
+.delivery-content__text {
+  flex: 0 0 60%;
+  margin-bottom: 20px;
+
+}
+
+.delivery__text {
+  font-size: 18px;
+  color: rgba(61, 49, 55, 0.96);
+}
+.delivery__btn {
+  display: flex;
+  gap: 1rem;
+  margin-top: 35px;
+}
+.btn {
+}
+.delivery__img {
+
+}
+.catalog__bg-1 {
+}
+.catalog__bg-2 {
+}
+
+ .delivery__img{
+  display: none;
+ }
+@media (max-width: 700px){
+
+  .delivery.section{
+    padding-bottom: 0;
+    height: auto;
+    }
+ .delivery{
+
+&__text{
+text-align: center;
+}
+
+
+  
+  background-image: none;
+ background-color:#faf6f5;
+ .delivery-content .block__title-left h2{
+  text-align: center;
+ }
+  &__img{
+  display: block;
+  img{
+    margin: auto;
+  }
+ }
+   }
+  }
+   
+ 
+@media (max-width: 500px){
+.delivery{
+height: auto;
+  &__btn{
+    flex-direction: column;
+  }
+}
+ }
+ 

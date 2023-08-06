@@ -1,0 +1,115 @@
+@import 'style-general.scss';
+/*main block*/
+.main{
+  color: $text-color;
+  background-image: url('../img/main_bg2.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  //min-height: 960px;
+  height: 100vh;
+  &__text{
+   // padding: 117px 0 100px 0;
+    padding-top: calc(30px + 87 * (100vw - 400px) / 1920);
+    padding-bottom: calc(30px + 70 * (100vw - 400px) / 1920);
+  }
+  &__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+ 
+}
+&__title{
+  background:$gradient-color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: calc(50px + 40 * (100vw - 400px) / 1920);
+  text-transform: uppercase;
+  font-family: $fonts;
+  line-height: normal;
+margin-bottom: 20px;
+  span{
+    display: block;
+    font-size: calc(30px + 20 * (100vw - 400px) / 1920);
+    text-transform:capitalize;
+   
+  }
+}
+&__subtitle{
+  color: $text-color_dark;
+  font-size: calc(18px + 7 * (100vw - 400px) / 1920);
+  //line-height:140%
+}
+}
+
+.main__services-items{
+  margin-bottom: 0.9rem;
+  font-size: calc(16px + 4 * (100vw - 400px) / 1920);
+  display: flex;
+  align-items: center;
+ span{
+  display: block;
+ }
+}
+.main__services-items::before {
+  content: "";
+  background: $gradient-color;
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+@media (max-width: 1800px){
+.main{
+  &__image{
+    max-width: calc(360px + 690 * (100vw - 400px) / 1920);
+  }
+}
+}
+
+
+@media (max-width: 1280px){
+  .main{
+    height: 720px;
+  }
+  }
+
+
+@media (max-width: 700px){
+.main{
+  &__services-items{
+    margin-bottom: 0.6em;
+  }
+  &__title{
+    line-height: 114%;
+  }
+  &__text{
+    padding: 30px 0 30px 0;
+    text-align: center;
+    
+  }
+  &__services{
+    text-align: left;
+   margin-left: 16% ;
+   
+  }
+}
+
+}
+
+@media (max-width: 330px){
+.main{
+ 
+  &__services{
+   
+   margin-left: 7% ;
+   
+  }
+}
+
+}

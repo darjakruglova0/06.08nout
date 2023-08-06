@@ -1,0 +1,338 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Open Sans reg";
+  src: url("/fonts/OpenSans-Regular.eot");
+  src: url("/fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/OpenSans-Regular.woff") format("woff"), url("/fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans bold";
+  src: url("/fonts/OpenSans-Bold.eot");
+  src: url("/fonts/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("/fonts/OpenSans-Bold.woff") format("woff"), url("/fonts/OpenSans-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Open Sans light";
+  src: url("/fonts/OpenSans-Light.eot");
+  src: url("/fonts/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("/fonts/OpenSans-Light.woff") format("woff"), url("/fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Playfair Display Bold";
+  src: url("../fonts/PlayfairDisplay-Bold.eot");
+  src: url("../fonts/PlayfairDisplay-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/PlayfairDisplay-Bold.woff") format("woff"), url("../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc7c9;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: "Open Sans reg", sans-serif;
+}
+
+a {
+  color: #a7a4a5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #cc9744;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans reg", sans-serif;
+  font-weight: 400;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+.btn {
+  border-radius: 5px;
+  border: 1px solid rgb(204, 151, 68);
+  color: #cc9744;
+  font-size: 14px;
+  padding: 18px 40px;
+  text-align: center;
+}
+
+.block__title h2 {
+  font-family: "Playfair Display Bold", serif;
+  font-size: calc(25px + 30 * (100vw - 400px) / 1920);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: calc(20px + 30 * (100vw - 400px) / 1920);
+}
+
+.section {
+  position: relative;
+  padding-top: calc(35px + 50 * (100vw - 400px) / 1920);
+  padding-bottom: calc(45px + 40 * (100vw - 400px) / 1920);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-light {
+  background-color: #fff;
+  color: #cc9744;
+  border: 1px solid #cc9744;
+}
+.btn-light:hover {
+  background: linear-gradient(211deg, #ce8715 27.99%, #ecc47e 80.38%);
+  color: #fff;
+}
+
+.btn-gradient {
+  background: linear-gradient(211deg, #ce8715 27.99%, #ecc47e 80.38%);
+  color: #fff;
+}
+.btn-gradient:hover {
+  background: #ffffff;
+  color: #cc9744;
+  border: 1px solid #cc9744;
+}
+
+.btn-stroke {
+  background-color: transparent;
+}
+
+.bg-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.bg-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+/*хлебные крошки*/
+.breadcrumb {
+  color: #cc9744;
+  font-size: 14px;
+}
+.breadcrumb a {
+  color: #cc9744;
+}
+
+.reviews {
+  background-image: url(../img/reviews-fon.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.reviews__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.reviews__btn .btn-stroke:hover {
+  background: linear-gradient(211deg, #ce8715 27.99%, #ecc47e 80.38%);
+  color: #fff;
+}
+.reviews__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.3rem;
+  margin-bottom: 50px;
+}
+.reviews__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 49%;
+          flex: 0 0 49%;
+}
+.reviews__item-content {
+  padding: 15px;
+  border: 2px solid #cc9744;
+  border-radius: 5px;
+  position: relative;
+}
+.reviews__item-name {
+  background: linear-gradient(211deg, #C38B34 27.99%, #ECC47E 80.38%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+  font-weight: 600;
+  font-family: "Playfair Display Bold", serif;
+  margin-bottom: 8px;
+}
+.reviews__item-text {
+  color: rgba(255, 255, 255, 0.96);
+  font-size: 14px;
+  font-family: "Open Sans light", sans-serif;
+  font-style: italic;
+  line-height: 22px;
+}
+
+.foto {
+  max-width: 312px;
+}
+
+.reviews__img {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+
+@media (max-width: 1167px) {
+  .reviews__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .reviews__item-content {
+    height: 100%;
+  }
+  .reviews .foto {
+    max-width: 200px;
+  }
+}
+@media (max-width: 676px) {
+  .obj-img {
+    width: 100%;
+  }
+  .obj-img img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 230px;
+    width: 100%;
+    max-width: none !important;
+  }
+  .reviews__item {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+@media (max-width: 390px) {
+  .btn-stroke {
+    width: 100%;
+  }
+}/*# sourceMappingURL=style7-reviews.css.map */

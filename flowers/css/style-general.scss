@@ -1,0 +1,232 @@
+@font-face {
+  font-family: 'Open Sans reg';
+  src: url('/fonts/OpenSans-Regular.eot');
+  src: url('/fonts/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/OpenSans-Regular.woff') format('woff'),
+  url('/fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  }
+  @font-face {
+    font-family: 'Open Sans bold';
+    src: url('/fonts/OpenSans-Bold.eot');
+    src: url('/fonts/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/OpenSans-Bold.woff') format('woff'),
+    url('/fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Open Sans light';
+      src: url('/fonts/OpenSans-Light.eot');
+      src: url('/fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/OpenSans-Light.woff') format('woff'),
+      url('/fonts/OpenSans-Light.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      }
+  @font-face {
+    font-family: 'Playfair Display Bold';
+    src: url('../fonts/PlayfairDisplay-Bold.eot');
+    src: url('../fonts/PlayfairDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/PlayfairDisplay-Bold.woff') format('woff'),
+    url('../fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
+
+    
+
+$fonts: "Playfair Display Bold", serif;
+$main-fonts: "Open Sans reg", sans-serif;
+$main-fonts-light: "Open Sans light", sans-serif;
+$main-fonts-bold: "Open Sans bold", sans-serif;
+$main-color: #3d3137;
+$text-color: #fff;
+$text-color_dark: #a7a4a5;
+$text-color_black: #000;
+$text-active: #cc9744;
+$gradient-color: linear-gradient(211deg, #ce8715 27.99%, #ecc47e 80.38%);
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ccc7c9;
+}
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  font-family: $main-fonts;
+}
+a {
+  color: $text-color_dark;
+  text-decoration: none;
+}
+a:hover {
+  color: $text-active;
+}
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 15px;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  font-family: $main-fonts;
+  font-weight: 400;
+}
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.btn {
+  border-radius: 5px;
+  border: 1px solid rgb(204, 151, 68);
+  color: #cc9744;
+  font-size: 14px;
+  padding: 18px 40px;
+  text-align: center;
+}
+
+.block__title h2 {
+  font-family: $fonts;
+  font-size: calc(25px + 30 * (100vw - 400px) / 1920);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: calc(20px + 30 * (100vw - 400px) / 1920);
+}
+
+.section {
+  position: relative;
+  padding-top: calc(35px + 50 * (100vw - 400px) / 1920);
+  padding-bottom: calc(45px + 40 * (100vw - 400px) / 1920);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-light {
+  background-color: #fff;
+  color: $text-active;
+  border: 1px solid $text-active;
+  &:hover 
+{
+    background: $gradient-color;
+    color: #fff;
+   
+  }
+}
+.btn-gradient {
+  background: $gradient-color;
+  color: #fff;
+  &:hover{
+    background: #ffffff;
+    color: $text-active;
+    border: 1px solid $text-active;
+  }
+}
+.btn-stroke {
+  background-color: transparent;
+}
+
+.bg-1 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.bg-2 {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+
+/*хлебные крошки*/
+.breadcrumb{
+ color: $text-active;
+  font-size: 14px;
+  a{
+    color: $text-active;
+  }
+}

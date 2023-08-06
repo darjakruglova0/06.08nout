@@ -1,0 +1,67 @@
+@import 'style-general.scss';
+.questions{
+  background-image: url(../img/questions-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.block__title-titlelight {
+  background: $gradient-color;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.block-content {
+  display: none;
+  
+  margin: 0;
+  list-style: none;
+  padding-left: 20px;
+}
+
+#block1 .title, #block2 .title, #block3 .title {
+  font-size: calc(14px + 4 * (100vw - 400px) / 1920);
+
+  cursor: pointer;
+}
+
+
+
+.block-content.open {
+  display: block;
+  margin-bottom: 20px;
+
+  font-size: calc(14px + 2 * (100vw - 400px) / 1920);
+color:#fff;
+font-weight: 400;
+}
+
+
+.faq{
+  border-radius: 5px;
+background: #FFF;
+
+.title{
+  padding: 19px 25px;
+}
+&-btn{
+  background: $gradient-color;
+  display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+
+font-size: calc(14px + 4 * (100vw - 400px) / 1920);
+font-weight: 600;
+line-height: normal;
+margin-bottom: 15px;
+display: flex;
+justify-content: space-between;
+}
